@@ -1,0 +1,52 @@
+---
+title: "Başlangıç Seviyesi İçin Padel Rehberi"
+description: "Padelı yeni mi keşfettiniz? Bu kapsamlı rehber ile temel kuralları, ekipmanları ve ilk maçınız için ipuçlarını öğrenin."
+date: "2024-11-15"
+author: "PadelBurada Ekibi"
+tags: ["Başlangıç", "Rehber", "Kurallar"]
+coverImage: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800"
+---
+
+## Padel Nedir?
+
+Padel, tenis ve squash'ın birleşiminden doğan, dünyanın en hızlı büyüyen sporu olma yolunda ilerleyen heyecan verici bir raket sporudur. İspanya'da doğan bu spor, Türkiye'de de son yıllarda büyük ilgi görmektedir.
+
+Padel; **4 oyuncuyla** (2'ye 2) kapalı veya yarı kapalı cam duvarlı bir kortta oynanır. Duvarlar oyunun bir parçası olduğu için squash'a benzese de puanlama ve ağ sistemi tenise daha yakındır.
+
+## Temel Kurallar
+
+### Servis
+- Servis her zaman **alt kısımdan** vurulur — bel hizasının altından.
+- Servis köşegen karşı servise atılmalıdır.
+- İki servis hakkınız vardır. İkincisini de kaçırırsanız rakip sayı alır.
+
+### Puan Sistemi
+Tenis ile aynı puanlama sistemi: 15, 30, 40, Oyun. Set 6 oyunla kazanılır ve maç genellikle 3 set üzerinden oynanır.
+
+### Duvarda Oynama
+En heyecanlı fark burada! Top **yerden sekip duvara çarptıktan sonra** karşı tarafa gönderilebilir. Bu kural hem savunmayı hem de topu oyunda tutmayı kolaylaştırır.
+
+## Ekipman Seçimi
+
+### Raket
+Başlangıç için **orta sertlikte** bir raket tercih edin. Çok sert raketler dirsek sorununa yol açabilir. 200-400 TL aralığında iyi bir başlangıç raketi bulabilirsiniz.
+
+### Top
+Padel topları tenisten biraz daha yumuşaktır. Her maç için taze top kullanmak performansınızı artırır.
+
+### Ayakkabı
+**Çim veya kum zemin** için özel padel ayakkabısı ya da tenis ayakkabısı kullanın. Koşu ayakkabıları uygun değildir — ani duruşlarda zemin tutuşu kritiktir.
+
+## İlk Maçınız İçin 5 İpucu
+
+1. **Ağın yakınında durun** — Padelde net hakimiyeti kazanmak çok önemlidir.
+2. **Lobdan korkmayın** — Yüksek toplar hem savunma hem de ritim bozma için idealdir.
+3. **Duvarı kullanın** — Duvara çarpan topları ceza olarak değil, fırsat olarak görün.
+4. **İletişim kurun** — Çiftlerde "bende" veya "sende" diyerek koordineli oynayın.
+5. **Sabırlı olun** — Padel öğrenmesi kolay ama ustalaşması keyifli bir süreçtir!
+
+## Türkiye'de Padel Sahnesi
+
+Türkiye'de padel, özellikle İstanbul, Ankara ve İzmir'de hızla büyümektedir. Şehirlerde profesyonel kortların sayısı her geçen yıl artmakta, turnuvalar düzenlenmektedir.
+
+**PadelBurada** olarak size en yakın ve en uygun kortu bulmanızda yardımcı olmak için buradayız. Hemen [kort ara](/kortlar) ve ilk rezervasyonunuzu yapın!

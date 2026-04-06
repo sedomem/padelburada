@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model City {
+  id        Int        @id @default(autoincrement())
+  name      String
+  slug      String     @unique
+  districts District[]
+  courts    Court[]
+  createdAt DateTime   @default(now())
+}
+
+model District {
+  id      Int     @id @default(autoincrement())
+  name    String
+  slug    String
+  cityId  Int
+  city    City    @relation(fields: [cityId], references: [id])
+  courts  Court[]
+
+  @@unique([cityId, slug])
+}
+
+model Court {
+  id              Int              @id @default(autoincrement())
+  ownerUserId     Int
+  name            String
+  slug            String           @unique
+  description     String?
+  address         String
+  cityId          Int
+  districtId      Int
+  lat             Float
+  lng             Float
+  courtType       String           // indoor, outdoor
+  surface         String           // grass, cement, rubber
+  hasParking      Boolean          @default(false)
+  hasShower       Boolean          @default(false)
+  hasRacketRental Boolean          @default(false)
+  hasLighting     Boolean          @default(false)
+  minPriceHour    Float
+  maxPriceHour    Float
+  phone           String
+  website         String?
+  email           String?
+  logoUrl         String?
+  coverImageUrl   String?
+  isApproved      Boolean          @default(false)
+  status          String           @default("pending")
+  avgRating       Float            @default(0)
+  totalReviews    Int              @default(0)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  city            City             @relation(fields: [cityId], references: [id])
+  district        District         @relation(fields: [districtId], references: [id])
+  owner           User             @relation(fields: [ownerUserId], references: [id])
+  schedules       CourtSchedule[]
+  exceptions      CourtException[]
+  reservations    Reservation[]
+  reviews         Review[]
+  favorites       Favorite[]
+}
+
+model CourtSchedule {
+  id        Int     @id @default(autoincrement())
+  courtId   Int
+  dayOfWeek Int     // 0=Pazar, 1=Pazartesi ... 6=Cumartesi
+  startTime String  // "09:00"
+  endTime   String  // "23:00"
+  priceHour Float
+  isActive  Boolean @default(true)
+  court     Court   @relation(fields: [courtId], references: [id])
+}
+
+model CourtException {
+  id                Int      @id @default(autoincrement())
+  courtId           Int
+  exceptionDate     DateTime
+  isClosed          Boolean  @default(false)
+  priceHourOverride Float?
+  note              String?
+  court             Court    @relation(fields: [courtId], references: [id])
+}
+
+model Reservation {
+  id                 Int      @id @default(autoincrement())
+  userId             Int?
+  courtId            Int
+  reservationDate    DateTime
+  startTime          String
+  endTime            String
+  totalPrice         Float
+  playerCount        Int
+  extraServices      Json?
+  customerName       String
+  customerEmail      String
+  customerPhone      String
+  paymentStatus      String   @default("pending")
+  paymentId          String?
+  paymentMethod      String?
+  status             String   @default("pending")
+  cancellationReason String?
+  createdAt          DateTime @default(now())
+  court              Court    @relation(fields: [courtId], references: [id])
+  user               User?    @relation(fields: [userId], references: [id])
+  review             Review?
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  phone        String?
+  fullName     String
+  passwordHash String?
+  role         String        @default("user")
+  avatarUrl    String?
+  isVerified   Boolean       @default(false)
+  provider     String        @default("email")
+  createdAt    DateTime      @default(now())
+  lastLogin    DateTime?
+  courts       Court[]
+  reservations Reservation[]
+  reviews      Review[]
+  favorites    Favorite[]
+}
+
+model Review {
+  id                 Int       @id @default(autoincrement())
+  userId             Int
+  courtId            Int
+  reservationId      Int?      @unique
+  rating             Int
+  comment            String?
+  isVerifiedPurchase Boolean   @default(false)
+  ownerResponse      String?
+  ownerResponseDate  DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+  court              Court     @relation(fields: [courtId], references: [id])
+  reservation        Reservation? @relation(fields: [reservationId], references: [id])
+}
+
+model Favorite {
+  userId    Int
+  courtId   Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  court     Court    @relation(fields: [courtId], references: [id])
+
+  @@id([userId, courtId])
+}
